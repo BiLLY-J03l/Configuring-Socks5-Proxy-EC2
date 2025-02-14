@@ -1,5 +1,5 @@
 # Configuring-Socks5-Proxy-EC2
-This repo showcases the process of launching, configuring an EC2 instance as a SOCKS5 proxy
+This repo showcases the process of launching, configuring an EC2 instance as a SOCKS5 proxy using two different methods
 
 ## 1- Login into your aws account and launch a new ubuntu instance
 
@@ -141,6 +141,7 @@ note: if you want to disconnect from that socks5 server
 ------------------------------------------------------------------------------------------
 
 ## Second Method : Dante
+-this link https://www.inet.no/dante/doc/1.3.x/config/server.html helped me a bit to configure danted
 
 -Most of the work will be done on the EC2 instance
 
