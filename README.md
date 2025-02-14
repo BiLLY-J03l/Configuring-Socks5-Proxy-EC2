@@ -165,4 +165,8 @@ note: if you want to disconnect from that socks5 server
 
 3- add the server to foxyproxy settings and navigate to dnsleaktest.com
 
+-we will notice that it won't work.
 
+-Why is that? Because the EC2 instance has a strict firewall by default.
+
+-Let's change that:
