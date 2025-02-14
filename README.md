@@ -124,7 +124,7 @@ note: if you want to disconnect from that socks5 server
       User ec2-user
       IdentityFile /path/to/your/private-key.pem
       DynamicForward 1080
-
+      ProxyCommand ssh -i /path/to/your/private-key.pem -f -N ec2-user@%h
 
 1- Configure the .ssh/config file
 
