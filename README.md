@@ -64,6 +64,17 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 -i: specefies the private key path
 -D 1080: means you're creating a SOCKS proxy on localhost:1080
 
+-First, I will use puttygen to convert the .ppk file to .pem file to use it with openssh
+
+![image](https://github.com/user-attachments/assets/b63df90e-df78-4695-b7ea-edf0f4a4b3bb)
+1-Click on file > load private key > choose the file
+
+2-Click on conversions > Export OpenSSH key
+![image](https://github.com/user-attachments/assets/2400cded-6e3a-43a6-96c7-9f80a4dcb39b)
+
+
+
+
 note: if you want to disconnect from that socks5 server
 
         ps aux | grep ssh
