@@ -124,23 +124,19 @@ note: if you want to disconnect from that socks5 server
       User ec2-user
       IdentityFile /path/to/your/private-key.pem
       DynamicForward 1080
-      ProxyCommand ssh -i /path/to/your/private-key.pem -f -N ec2-user@%h
-
-ssh -i /path/to/your/private-key.pem -f -N ec2-user@%h: This part automatically creates the SOCKS5 proxy on the specified EC2 instance (%h represents the host specified in the Host entry, which is your-ec2-public-ip in this case).
-
+     
 1- Configure the .ssh/config file
 
 ![image](https://github.com/user-attachments/assets/7a117bec-7151-413b-a4f6-bc3aab8f22f6)
 
 2- Use the alias to connect
 
-    ssh server1_proxy
+    ssh -f -N server1_proxy
     
-When you run ssh your-ec2-alias, SSH will:
+![image](https://github.com/user-attachments/assets/a5df076c-fe37-47ba-b16b-240d3580305f)
 
-Set up the SOCKS5 proxy using DynamicForward 1080.
+![image](https://github.com/user-attachments/assets/a295d3e1-bba3-49d3-bdb7-16ddfc12f973)
 
-Run in the background with the -f and -N options, so it will not block the terminal or execute any commands on the EC2 instance.
 
 ------------------------------------------------------------------------------------------
 
