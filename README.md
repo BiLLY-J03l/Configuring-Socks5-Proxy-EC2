@@ -110,7 +110,7 @@ Finally, It works.
 note: if you want to disconnect from that socks5 server
 
         ps aux | grep ssh
-        kill -9 <PID>
+        kill <PID>
 -9: This is the option that specifies the signal to send. -9 represents SIGKILL, a signal that forcefully stops the process.
 
 -Disconneting execution:
