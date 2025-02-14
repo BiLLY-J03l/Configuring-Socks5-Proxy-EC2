@@ -59,10 +59,12 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
                specified in the configuration file.
 
 ### using the command 
-    ssh -i /path/to/your/key ubuntu@EC2-instance-ip -D 1080 -f
--f: Requests ssh to go to background just before command execution.
+    ssh -i /path/to/your/key ubuntu@EC2-instance-ip -D 1080 -f -N
 -i: specefies the private key path
 -D 1080: means you're creating a SOCKS proxy on localhost:1080
+-f: Requests ssh to go to background just before command execution.
+-N: Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
+
 
 -First, I will use puttygen to convert the .ppk file to .pem file to use it with openssh
 
@@ -72,7 +74,29 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 2-Click on conversions > Export OpenSSH key
 ![image](https://github.com/user-attachments/assets/2400cded-6e3a-43a6-96c7-9f80a4dcb39b)
 
+3-command execution
+![image](https://github.com/user-attachments/assets/4601152e-1be6-4828-ade7-15533fdc2aee)
 
+4-Verify that the connection is established with:
+        
+    netstat -antp | grep 1080
+
+![image](https://github.com/user-attachments/assets/c11fb914-f11e-480c-b972-88a14641e1e6)
+
+5-configure proxychains to forward the traffic through the SOCKS5 proxy:
+
+    apt install proxychains4
+    vim /etc/proxychains4.conf
+![image](https://github.com/user-attachments/assets/b204a9ae-d595-4290-a280-d8b1453204d6)
+
+6-I wrote a python3 script to get my public IP:
+![image](https://github.com/user-attachments/assets/e4a19b60-9047-4b4a-8ded-b57c9e6ecbd2)
+
+Finally, It works.
+
+7- You can use FoxyProxy as well
+![image](https://github.com/user-attachments/assets/66e26d1e-bb9d-46f5-ac0b-c6f840be4991)
+![image](https://github.com/user-attachments/assets/5769a109-71a5-48f5-9fb1-c494985ad137)
 
 
 note: if you want to disconnect from that socks5 server
@@ -80,6 +104,10 @@ note: if you want to disconnect from that socks5 server
         ps aux | grep ssh
         kill -9 <PID>
 -9: This is the option that specifies the signal to send. -9 represents SIGKILL, a signal that forcefully stops the process.
+
+-Disconneting execution:
+![image](https://github.com/user-attachments/assets/30b04eb5-a6d3-4e96-9ca5-a344cda13da7)
+
 
 ### adding config to ~/.ssh/config file
 
