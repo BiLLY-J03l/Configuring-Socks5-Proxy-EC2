@@ -117,7 +117,7 @@ note: if you want to disconnect from that socks5 server
 ![image](https://github.com/user-attachments/assets/30b04eb5-a6d3-4e96-9ca5-a344cda13da7)
 
 
-### adding config to ~/.ssh/config file
+### (another method) adding config to ~/.ssh/config file
 
     Host your-ec2-alias
       HostName your-ec2-public-ip
