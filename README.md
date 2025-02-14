@@ -61,8 +61,11 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 ### using the command 
     ssh -i /path/to/your/key ubuntu@EC2-instance-ip -D 1080 -f -N
 -i: specefies the private key path
+
 -D 1080: means you're creating a SOCKS proxy on localhost:1080
+
 -f: Requests ssh to go to background just before command execution.
+
 -N: Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
 
 
