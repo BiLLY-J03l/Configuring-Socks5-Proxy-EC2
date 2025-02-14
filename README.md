@@ -45,7 +45,7 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
 ## First Method : SSH
 
--Most of the work will be done on your local machine
+-All of the work will be done on your local machine
 > -D : Specifies a local “dynamic” application-level port
                forwarding.  This works by allocating a socket to listen
                to port on the local side, optionally bound to the
@@ -141,3 +141,28 @@ note: if you want to disconnect from that socks5 server
 ------------------------------------------------------------------------------------------
 
 ## Second Method : Dante
+
+-Most of the work will be done on the EC2 instance
+
+    apt install dante-server
+    systemctl daemon-reload
+
+![image](https://github.com/user-attachments/assets/6ba78412-eda9-4a34-9e97-cb307bd133a2)
+
+1- Configure the /etc/danted.conf file
+
+    vim /etc/danted.conf
+
+![image](https://github.com/user-attachments/assets/b1691b05-6ae2-400c-bf07-8f31d65752e5)
+![image](https://github.com/user-attachments/assets/f854e3e8-6698-4010-ad1f-bcf135a598ed)
+
+2- Restart the service
+
+    systemctl restart danted
+    
+![image](https://github.com/user-attachments/assets/3d27455f-cf46-4d3b-823c-927c55033de1)
+
+
+3- add the server to foxyproxy settings and navigate to dnsleaktest.com
+
+
