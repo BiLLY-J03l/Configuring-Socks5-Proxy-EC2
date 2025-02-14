@@ -100,7 +100,7 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
 ![image](https://github.com/user-attachments/assets/e4a19b60-9047-4b4a-8ded-b57c9e6ecbd2)
 
-** IT WORKS **
+**IT WORKS**
 
 7- You can use FoxyProxy as well
 ![image](https://github.com/user-attachments/assets/66e26d1e-bb9d-46f5-ac0b-c6f840be4991)
@@ -179,7 +179,7 @@ note: if you want to disconnect from that socks5 server
 
 ![image](https://github.com/user-attachments/assets/b94d4e12-a2d6-46d6-b148-2125e0160e7d)
 
-** IT WORKS **
+**IT WORKS**
 
 6- Using proxychains4:
 
@@ -190,4 +190,4 @@ note: if you want to disconnect from that socks5 server
 
 ![image](https://github.com/user-attachments/assets/68fa9a1b-3ccc-4c82-9c70-b52ecd8706d4)
 
-** IT WORKS **
+**IT WORKS**
