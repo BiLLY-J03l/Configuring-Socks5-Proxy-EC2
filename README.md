@@ -169,4 +169,11 @@ note: if you want to disconnect from that socks5 server
 
 -Why is that? Because the EC2 instance has a strict firewall by default.
 
--Let's change that:
+-Let's change that
+
+4- Navigate to the EC2 instances and open the "Security" tab:
+
+![image](https://github.com/user-attachments/assets/1a693e4c-f083-467e-8dcd-600f973b50da)
+
+5- Save the changes and try again:
+
