@@ -126,6 +126,14 @@ note: if you want to disconnect from that socks5 server
       DynamicForward 1080
 
 
+1- Configure the .ssh/config file
+
+![image](https://github.com/user-attachments/assets/7a117bec-7151-413b-a4f6-bc3aab8f22f6)
+
+2- Use the alias to connect
+
+    ssh server1_proxy
+
 ------------------------------------------------------------------------------------------
 
 ## Second Method : Dante
