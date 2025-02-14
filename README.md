@@ -72,12 +72,15 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 -First, I will use puttygen to convert the .ppk file to .pem file to use it with openssh
 
 ![image](https://github.com/user-attachments/assets/b63df90e-df78-4695-b7ea-edf0f4a4b3bb)
+
 1-Click on file > load private key > choose the file
 
 2-Click on conversions > Export OpenSSH key
+
 ![image](https://github.com/user-attachments/assets/2400cded-6e3a-43a6-96c7-9f80a4dcb39b)
 
 3-command execution
+
 ![image](https://github.com/user-attachments/assets/4601152e-1be6-4828-ade7-15533fdc2aee)
 
 4-Verify that the connection is established with:
@@ -90,9 +93,11 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
     apt install proxychains4
     vim /etc/proxychains4.conf
+    
 ![image](https://github.com/user-attachments/assets/b204a9ae-d595-4290-a280-d8b1453204d6)
 
 6-I wrote a python3 script to get my public IP:
+
 ![image](https://github.com/user-attachments/assets/e4a19b60-9047-4b4a-8ded-b57c9e6ecbd2)
 
 Finally, It works.
