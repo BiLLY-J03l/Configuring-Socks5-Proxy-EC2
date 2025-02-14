@@ -31,6 +31,7 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
     sudo su
     apt update ; apt full-upgrade -y ; apt autoremove -y
+    systemctl daemon-reload
 
 -----------------------------------------------------------------------------------------
 
@@ -38,4 +39,46 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 ## There are two methods.
 
 ### A) using SSH
-### B) using DANTE
+### B) using Dante -> https://www.inet.no/dante/
+
+------------------------------------------------------------------------------------------
+
+## First Method : SSH
+
+-Most of the work will be done on your local machine
+> -D : Specifies a local “dynamic” application-level port
+               forwarding.  This works by allocating a socket to listen
+               to port on the local side, optionally bound to the
+               specified bind_address.  Whenever a connection is made to
+               this port, the connection is forwarded over the secure
+               channel, and the application protocol is then used to
+               determine where to connect to from the remote machine.
+               Currently the SOCKS4 and SOCKS5 protocols are supported,
+               and ssh will act as a SOCKS server.  Only root can forward
+               privileged ports.  Dynamic port forwardings can also be
+               specified in the configuration file.
+
+### using the command 
+    ssh -i /path/to/your/key ubuntu@EC2-instance-ip -D 1080 -f
+-f: Requests ssh to go to background just before command execution.
+-i: specefies the private key path
+-D 1080: means you're creating a SOCKS proxy on localhost:1080
+
+note: if you want to disconnect from that socks5 server
+
+        ps aux | grep ssh
+        kill -9 <PID>
+-9: This is the option that specifies the signal to send. -9 represents SIGKILL, a signal that forcefully stops the process.
+
+### adding config to ~/.ssh/config file
+
+    Host your-ec2-alias
+      HostName your-ec2-public-ip
+      User ec2-user
+      IdentityFile /path/to/your/private-key.pem
+      DynamicForward 1080
+
+
+------------------------------------------------------------------------------------------
+
+## Second Method : Dante
