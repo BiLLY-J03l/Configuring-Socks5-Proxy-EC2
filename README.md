@@ -89,7 +89,7 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
 ![image](https://github.com/user-attachments/assets/c11fb914-f11e-480c-b972-88a14641e1e6)
 
-5-configure proxychains to forward the traffic through the SOCKS5 proxy:
+5-configure proxychains4 to forward the traffic through the SOCKS5 proxy:
 
     apt install proxychains4
     vim /etc/proxychains4.conf
@@ -100,7 +100,7 @@ This repo showcases the process of launching, configuring an EC2 instance as a S
 
 ![image](https://github.com/user-attachments/assets/e4a19b60-9047-4b4a-8ded-b57c9e6ecbd2)
 
-Finally, It works.
+** IT WORKS **
 
 7- You can use FoxyProxy as well
 ![image](https://github.com/user-attachments/assets/66e26d1e-bb9d-46f5-ac0b-c6f840be4991)
@@ -177,3 +177,17 @@ note: if you want to disconnect from that socks5 server
 
 5- Save the changes and try again:
 
+![image](https://github.com/user-attachments/assets/b94d4e12-a2d6-46d6-b148-2125e0160e7d)
+
+** IT WORKS **
+
+6- Using proxychains4:
+
+    vim /etc/proxychains4.conf
+    proxychains -q /home/caretaker/Desktop/pub.py
+
+![image](https://github.com/user-attachments/assets/0e5d397a-9568-4cff-b275-02402ece2332)
+
+![image](https://github.com/user-attachments/assets/68fa9a1b-3ccc-4c82-9c70-b52ecd8706d4)
+
+** IT WORKS **
