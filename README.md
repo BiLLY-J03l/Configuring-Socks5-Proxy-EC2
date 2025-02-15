@@ -111,7 +111,7 @@ note: if you want to disconnect from that socks5 server
 
         ps aux | grep ssh
         kill <PID>
--9: This is the option that specifies the signal to send. -9 represents SIGKILL, a signal that forcefully stops the process.
+
 
 -Disconneting execution:
 ![image](https://github.com/user-attachments/assets/30b04eb5-a6d3-4e96-9ca5-a344cda13da7)
