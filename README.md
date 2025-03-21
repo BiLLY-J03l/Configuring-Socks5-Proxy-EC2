@@ -45,7 +45,7 @@ This repo showcases the process of deploying, configuring an EC2 instance as a S
 
 ## First Method : SSH
 
--All of the work will be done on your local machine
+- All of the work will be done on your local machine
 > -D : Specifies a local “dynamic” application-level port
                forwarding.  This works by allocating a socket to listen
                to port on the local side, optionally bound to the
@@ -60,43 +60,40 @@ This repo showcases the process of deploying, configuring an EC2 instance as a S
 
 ### using the command 
     ssh -i /path/to/your/key ubuntu@EC2-instance-ip -D 1080 -f -N
--i: specefies the private key path
-
--D 1080: means you're creating a SOCKS proxy on localhost:1080
-
--f: Requests ssh to go to background just before command execution.
-
--N: Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
+- -i: specefies the private key path
+- -D 1080: means you're creating a SOCKS proxy on localhost:1080
+- -f: Requests ssh to go to background just before command execution.
+- -N: Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
 
 
--First, I will use puttygen to convert the .ppk file to .pem file to use it with openssh
+First, I will use puttygen to convert the .ppk file to .pem file to use it with openssh
 
 ![image](https://github.com/user-attachments/assets/b63df90e-df78-4695-b7ea-edf0f4a4b3bb)
 
-1-Click on file > load private key > choose the file
+1- Click on file > load private key > choose the file
 
-2-Click on conversions > Export OpenSSH key
+2- Click on conversions > Export OpenSSH key
 
 ![image](https://github.com/user-attachments/assets/2400cded-6e3a-43a6-96c7-9f80a4dcb39b)
 
-3-command execution
+3- command execution
 
 ![image](https://github.com/user-attachments/assets/4601152e-1be6-4828-ade7-15533fdc2aee)
 
-4-Verify that the connection is established with:
+4- Verify that the connection is established with:
         
     netstat -antp | grep 1080
 
 ![image](https://github.com/user-attachments/assets/c11fb914-f11e-480c-b972-88a14641e1e6)
 
-5-configure proxychains4 to forward the traffic through the SOCKS5 proxy:
+5- configure proxychains4 to forward the traffic through the SOCKS5 proxy:
 
     apt install proxychains4
     vim /etc/proxychains4.conf
     
 ![image](https://github.com/user-attachments/assets/b204a9ae-d595-4290-a280-d8b1453204d6)
 
-6-I wrote a python3 script to get my public IP:
+6- I wrote a python3 script to get my public IP:
 
 ![image](https://github.com/user-attachments/assets/e4a19b60-9047-4b4a-8ded-b57c9e6ecbd2)
 
@@ -113,7 +110,7 @@ note: if you want to disconnect from that socks5 server
         kill <PID>
 
 
--Disconneting execution:
+- Disconneting execution:
 ![image](https://github.com/user-attachments/assets/30b04eb5-a6d3-4e96-9ca5-a344cda13da7)
 
 
@@ -141,12 +138,12 @@ note: if you want to disconnect from that socks5 server
 ------------------------------------------------------------------------------------------
 
 ## Second Method : Dante
--this link https://www.inet.no/dante/doc/1.3.x/config/server.html helped me a bit to configure danted
+- this link https://www.inet.no/dante/doc/1.3.x/config/server.html helped me a bit to configure danted
 
--Most of the work will be done on the EC2 instance
-
-    apt install dante-server
-    systemctl daemon-reload
+- Most of the work will be done on the EC2 instance
+    
+        apt install dante-server
+        systemctl daemon-reload
 
 ![image](https://github.com/user-attachments/assets/6ba78412-eda9-4a34-9e97-cb307bd133a2)
 
